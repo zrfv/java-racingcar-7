@@ -1,9 +1,10 @@
 package racingcar.controller;
 
-import java.util.Scanner;
 import racingcar.model.RacingCar;
+import racingcar.model.RacingCarMove;
+import racingcar.model.RandomNumber;
 import racingcar.view.InputView;
-import racingcar.view.validator.InputValidator;
+
 
 public class RacingGameController {
 
@@ -19,7 +20,12 @@ public class RacingGameController {
 
     public void initRacingGame() {
         for (int i = 0; i < getCarName().length; ++i) {
-            RacingCar racingCar = new RacingCar(getCarName()[i], 0);
+            RacingCarMove racingCarMove = new RacingCarMove();
+            RandomNumber randomNumber = new RandomNumber();
+            RacingCar racingCar = new RacingCar(getCarName()[i], racingCarMove.move(randomNumber));
         }
     }
+
+    // RacingCar 객체는 한번만 만들고 RacingCarMove 매번 생성하여 랜덤값 대입
+    // currentPosition 에 move() 더하는 방식 - 이동했으면 +1 안했으면 +0
 }
