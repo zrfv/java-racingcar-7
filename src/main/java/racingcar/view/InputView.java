@@ -23,6 +23,9 @@ public class InputView {
     public String inputTryCount() {
         System.out.println(INITIAL_INPUT_TRY_COUNT);
         String tryCount = Console.readLine();
+
+        inputValidator.checkEmptyString(tryCount);
+
         return tryCount;
     }
 
