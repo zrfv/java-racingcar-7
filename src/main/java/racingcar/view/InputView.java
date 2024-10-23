@@ -13,6 +13,7 @@ public class InputView {
         System.out.println(INITIAL_INPUT_CAR_NAME);
         String carName = Console.readLine();
 
+        inputValidator.checkEmptyString(carName);
         inputValidator.checkSingleCar(carName);
 
         return carName;
