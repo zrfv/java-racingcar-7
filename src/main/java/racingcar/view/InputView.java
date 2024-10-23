@@ -34,6 +34,10 @@ public class InputView {
         return Integer.parseInt(string);
     }
 
+    public String[] splitCarName(String input) {
+        return input.split(",");
+    }
+
     public void close() {
         Console.close();
     }
