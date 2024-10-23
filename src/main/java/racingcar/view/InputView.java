@@ -25,8 +25,13 @@ public class InputView {
         String tryCount = Console.readLine();
 
         inputValidator.checkEmptyString(tryCount);
+        inputValidator.checkPositiveNumber(Integer.parseInt(tryCount));
 
         return tryCount;
+    }
+
+    public int convertStringToInt(String string) {
+        return Integer.parseInt(string);
     }
 
     public void close() {
