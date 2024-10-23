@@ -12,22 +12,20 @@ public class InputView {
 
     public String inputCarName() {
         System.out.println(INITIAL_INPUT_CAR_NAME);
-        String carName = Console.readLine();
+        String inputCarName = Console.readLine();
 
-        inputValidator.checkEmptyString(carName);
-        inputValidator.checkSingleCar(carName);
+        inputValidator.validateInputCarName(inputCarName);
 
-        return carName;
+        return inputCarName;
     }
 
     public String inputTryCount() {
         System.out.println(INITIAL_INPUT_TRY_COUNT);
-        String tryCount = Console.readLine();
+        String inputTryCount = Console.readLine();
 
-        inputValidator.checkEmptyString(tryCount);
-        inputValidator.checkPositiveNumber(Integer.parseInt(tryCount));
+        inputValidator.validateTryCount(inputTryCount);
 
-        return tryCount;
+        return inputTryCount;
     }
 
     public int convertStringToInt(String string) {
@@ -35,6 +33,7 @@ public class InputView {
     }
 
     public String[] splitCarName(String input) {
+        inputValidator.validateCarName(input.split(","));
         return input.split(",");
     }
 

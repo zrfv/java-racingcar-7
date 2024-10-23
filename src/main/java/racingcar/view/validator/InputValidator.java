@@ -39,5 +39,20 @@ public class InputValidator {
         }
     }
 
+    public void validateInputCarName(String input) {
+        checkEmptyString(input);
+        checkSingleCar(input);
+    }
+
+    public void validateCarName(String[] carName) {
+        checkEmptyString(carName);
+        checkCarNameLength(carName);
+    }
+
+    public void validateTryCount(String tryCount) {
+        checkEmptyString(tryCount);
+        checkPositiveNumber(Integer.parseInt(tryCount));
+    }
+
     // 이름이 같은 경우 예외 처리
 }
