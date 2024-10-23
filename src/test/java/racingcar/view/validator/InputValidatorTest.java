@@ -43,7 +43,7 @@ class InputValidatorTest{
         assertEquals("자동차 이름에 공백은 입력할 수 없습니다.", exception.getMessage());
 
         exception = assertThrows(IllegalArgumentException.class,
-                () -> new InputValidator().checkEmptyString(new String[]{"kim","lee",""}));
+                () -> new InputValidator().checkEmptyString(new String[]{"","lee","  ",""}));
         assertEquals("자동차 이름에 공백은 입력할 수 없습니다.", exception.getMessage());
     }
 
@@ -55,17 +55,6 @@ class InputValidatorTest{
 
         exception = assertThrows(IllegalArgumentException.class,
                 () -> new InputValidator().checkCarNameLength(new String[]{"kim","lee","The Weeknd"}));
-        assertEquals("자동차 이름은 1글자에서 5글자 사이로 입력가능합니다.", exception.getMessage());
-    }
-
-    @Test
-    void 입력_문자열_처음_또는_끝이_쉼표이면_예외_테스트() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new InputValidator().checkInValidCommaPosition(new String (",kim,lee")));
-        assertEquals("자동차 이름은 1글자에서 5글자 사이로 입력가능합니다.", exception.getMessage());
-
-        exception = assertThrows(IllegalArgumentException.class,
-                () -> new InputValidator().checkInValidCommaPosition(new String ("lee,kim,")));
         assertEquals("자동차 이름은 1글자에서 5글자 사이로 입력가능합니다.", exception.getMessage());
     }
 }

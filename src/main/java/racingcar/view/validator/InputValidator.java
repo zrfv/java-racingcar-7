@@ -39,13 +39,5 @@ public class InputValidator {
         }
     }
 
-    public void checkInValidCommaPosition(String input) {
-        if (input.startsWith(",") || input.endsWith(",")) {
-            throw new IllegalArgumentException(INVALID_CAR_NAME);
-        }
-    }
-
     // 이름이 같은 경우 예외 처리
-    // 이름이 쉼표(,)인 경우 예외 처리
-    // 입력 문자열 처음이나 끝에 쉼표(,)가 있다면 예외 처리
 }
