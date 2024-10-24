@@ -9,6 +9,11 @@ public class RacingCar {
         this.currentPosition = 0;
     }
 
+    public RacingCar(String name, int currentPosition) {
+        this.name = name;
+        this.currentPosition = currentPosition;
+    }
+
     public void move(RacingCarMove racingCarMove, RandomNumber randomNumber) {
         this.currentPosition += racingCarMove.move(randomNumber);
     }
