@@ -14,23 +14,22 @@ import racingcar.view.OutputView;
 public class RacingGameController {
 
     final InputView inputView = new InputView();
-
+    final RandomNumber randomNumber = new RandomNumber();
     private ArrayList<RacingCar> racingCarList = new ArrayList<>();
 
     public void initCarName() {
         for (String carNames : RacingCarName.getList(inputView)) {
-            RacingCar racingCar = new RacingCar(carNames);
+            final RacingCar racingCar = new RacingCar(carNames);
             racingCarList.add(racingCar);
         }
     }
 
     // 분리 필요
     public void initTryCount() {
-        RacingCarMove racingCarMove = new RacingCarMove();
-        RandomNumber randomNumber = new RandomNumber();
-        GameTryCount gameTryCount = new GameTryCount();
+        final RacingCarMove racingCarMove = new RacingCarMove();
+        final GameTryCount gameTryCount = new GameTryCount();
 
-        int tryCount = gameTryCount.get();
+        final int tryCount = gameTryCount.get();
         OutputView.printInitResult();
 
         for (int i = 0; i < tryCount; i++) {
@@ -52,7 +51,7 @@ public class RacingGameController {
     }
 
     private void endGame() {
-        Winner winner = new Winner();
+        final Winner winner = new Winner();
         List<String> winnersList = winner.getList(racingCarList, winner.maxPosition(racingCarList));
         String winners = String.join(",", winnersList);
         OutputView.printEndResult(winners);

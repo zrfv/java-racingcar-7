@@ -12,25 +12,25 @@ public class InputView {
 
     public String inputCarName() {
         System.out.println(INITIAL_INPUT_CAR_NAME);
-        String inputCarName = Console.readLine();
+        final String inputCarName = Console.readLine();
         inputValidator.validateInputCarName(inputCarName);
         return inputCarName;
     }
 
     public String inputTryCount() {
         System.out.println(INITIAL_INPUT_TRY_COUNT);
-        String inputTryCount = Console.readLine();
+        final String inputTryCount = Console.readLine();
         inputValidator.validateTryCount(inputTryCount);
         return inputTryCount;
     }
 
-    public int convertStringToInt(String string) {
-        return Integer.parseInt(string);
+    public int convertStringToInt(final String tryCount) {
+        return Integer.parseInt(tryCount);
     }
 
-    public String[] splitCarName(String input) {
-        inputValidator.validateCarName(input.split(","));
-        return input.split(",");
+    public String[] splitCarName(final String carNames) {
+        inputValidator.validateCarName(carNames.split(","));
+        return carNames.split(",");
     }
 
     public void close() {

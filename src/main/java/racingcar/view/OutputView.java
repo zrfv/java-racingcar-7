@@ -7,11 +7,11 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printRoundResult(Object object) {
+    public static void printRoundResult(final Object object) {
         System.out.println(object.toString());
     }
 
-    public static void printEndResult(String winners) {
+    public static void printEndResult(final String winners) {
         System.out.println("최종 우승자 : " + winners);
     }
 }
