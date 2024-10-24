@@ -4,10 +4,7 @@ import racingcar.view.InputView;
 
 public class RacingCarName {
 
-    private String[] nameList;
-
-    public String[] get() {
-        InputView inputView = new InputView();
+    public static String[] get(InputView inputView) {
         return inputView.splitCarName(inputView.inputCarName());
     }
 }

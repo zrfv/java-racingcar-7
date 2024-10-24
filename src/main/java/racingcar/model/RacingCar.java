@@ -8,4 +8,16 @@ public class RacingCar {
         this.name = name;
         this.currentPosition = currentPosition;
     }
+
+    public void move(RacingCarMove racingCarMove, RandomNumber randomNumber) {
+        this.currentPosition += racingCarMove.move(randomNumber);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentPosition() {
+        return currentPosition;
+    }
 }
