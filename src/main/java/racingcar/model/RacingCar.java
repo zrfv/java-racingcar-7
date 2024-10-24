@@ -28,8 +28,7 @@ public class RacingCar {
 
     private String convertIntToPosition() {
         String position= "";
-
-        for (int i = 0; i<getCurrentPosition();++i) {
+        for (int i = 0; i < getCurrentPosition();++i) {
             position = position.concat("-");
         }
         return position;

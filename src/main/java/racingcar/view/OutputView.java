@@ -1,8 +1,5 @@
 package racingcar.view;
 
-import racingcar.model.RacingCar;
-import racingcar.model.Winner;
-
 public class OutputView {
 
     public static void printInitResult() {

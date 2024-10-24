@@ -7,31 +7,31 @@ public class InputValidator {
     private final String NOT_POSITIVE_NUMBER = "1 이상의 정수만 입력가능합니다.";
     private final String INVALID_CAR_NAME = "자동차 이름은 1글자에서 5글자 사이로 입력가능합니다.";
 
-    public void checkSingleCar(String input) { // 쉼표 있는지 확인, 없으면 차 한대이므로 예외
+    public void validateSingleCar(String input) { // 쉼표 있는지 확인, 없으면 차 한대이므로 예외
         if (!input.contains(",")) {
             throw new IllegalArgumentException(NOT_MULTIPLE_CAR);
         }
     }
 
-    public void checkEmptyString(String input) {
+    public void validateEmptyString(String input) {
         if (input == null || input.isBlank()) {
             throw new IllegalArgumentException(EMPTY_STRING);
         }
     }
 
-    public void checkPositiveNumber(Integer input) {
+    public void validatePositiveNumber(Integer input) {
         if (!(input >= 1)) {
             throw new IllegalArgumentException(NOT_POSITIVE_NUMBER);
         }
     }
 
-    public void checkEmptyString(String[] input) {
+    public void validateEmptyString(String[] input) {
         for (String name : input) {
-            checkEmptyString(name);
+            validateEmptyString(name);
         }
     }
 
-    public void checkCarNameLength(String[] input) {
+    public void validateCarNameLength(String[] input) {
         for (String name : input) {
             if (name.length() > 5) {
                 throw new IllegalArgumentException(INVALID_CAR_NAME);
@@ -40,18 +40,18 @@ public class InputValidator {
     }
 
     public void validateInputCarName(String input) {
-        checkEmptyString(input);
-        checkSingleCar(input);
+        validateEmptyString(input);
+        validateSingleCar(input);
     }
 
     public void validateCarName(String[] carName) {
-        checkEmptyString(carName);
-        checkCarNameLength(carName);
+        validateEmptyString(carName);
+        validateCarNameLength(carName);
     }
 
     public void validateTryCount(String tryCount) {
-        checkEmptyString(tryCount);
-        checkPositiveNumber(Integer.parseInt(tryCount));
+        validateEmptyString(tryCount);
+        validatePositiveNumber(Integer.parseInt(tryCount));
     }
 
     // 이름이 같은 경우 예외 처리

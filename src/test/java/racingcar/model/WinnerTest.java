@@ -17,7 +17,7 @@ public class WinnerTest {
         racingCarList.add(new RacingCar("kane", 5));
 
         Winner winner = new Winner();
-        assertEquals(7, winner.getMaxPosition(racingCarList));
+        assertEquals(7, winner.maxPosition(racingCarList));
     }
 
     @Test

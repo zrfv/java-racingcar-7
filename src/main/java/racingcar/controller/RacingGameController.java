@@ -11,52 +11,57 @@ import racingcar.model.Winner;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-
 public class RacingGameController {
-    InputView inputView = new InputView();
+
+    final InputView inputView = new InputView();
 
     private ArrayList<RacingCar> racingCarList = new ArrayList<>();
 
-    public void initGame() {
-        for (String carNames : RacingCarName.get(inputView)) {
-            RandomNumber randomNumber = new RandomNumber();
+    public void initCarName() {
+        for (String carNames : RacingCarName.getList(inputView)) {
             RacingCar racingCar = new RacingCar(carNames);
             racingCarList.add(racingCar);
         }
     }
 
-    public void startGame() {
+    // 분리 필요
+    public void initTryCount() {
         RacingCarMove racingCarMove = new RacingCarMove();
         RandomNumber randomNumber = new RandomNumber();
         GameTryCount gameTryCount = new GameTryCount();
 
         int tryCount = gameTryCount.get();
-
         OutputView.printInitResult();
+
         for (int i = 0; i < tryCount; i++) {
-            duringGame(racingCarMove, randomNumber);
+            printRoundResult(racingCarMove, randomNumber);
             System.out.println();
         }
     }
 
-    private void duringGame(RacingCarMove racingCarMove, RandomNumber randomNumber) {
+    public void startGame() {
+        initCarName();
+        initTryCount();
+    }
+
+    private void printRoundResult(RacingCarMove racingCarMove, RandomNumber randomNumber) {
         for (RacingCar car : racingCarList) {
             car.move(racingCarMove, randomNumber);
             OutputView.printRoundResult(car);
         }
     }
 
-    private void gameEnd() {
+    private void endGame() {
         Winner winner = new Winner();
-        List<String> winnersList = winner.getList(racingCarList, winner.getMaxPosition(racingCarList));
+        List<String> winnersList = winner.getList(racingCarList, winner.maxPosition(racingCarList));
         String winners = String.join(",", winnersList);
         OutputView.printEndResult(winners);
     }
 
     public void run() {
-        initGame();
         startGame();
-        gameEnd();
+        endGame();
+        inputView.close();
     }
 
     // currentPosition 에 move() 더하는 방식 - 이동했으면 +1 안했으면 +0

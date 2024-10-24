@@ -13,18 +13,14 @@ public class InputView {
     public String inputCarName() {
         System.out.println(INITIAL_INPUT_CAR_NAME);
         String inputCarName = Console.readLine();
-
         inputValidator.validateInputCarName(inputCarName);
-
         return inputCarName;
     }
 
     public String inputTryCount() {
         System.out.println(INITIAL_INPUT_TRY_COUNT);
         String inputTryCount = Console.readLine();
-
         inputValidator.validateTryCount(inputTryCount);
-
         return inputTryCount;
     }
 
