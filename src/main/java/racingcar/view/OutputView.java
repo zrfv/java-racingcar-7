@@ -4,11 +4,12 @@ import racingcar.model.RacingCar;
 
 public class OutputView {
 
-    public void printInitResult() {
+    public static void printInitResult() {
+        System.out.println();
         System.out.println("실행 결과");
     }
 
-    public void printRoundResult(RacingCar racingCar) {
+    public static void printRoundResult(RacingCar racingCar) {
         System.out.println(racingCar.toString());
     }
 }

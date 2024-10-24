@@ -43,7 +43,7 @@ class InputValidatorTest{
         assertEquals("자동차 이름에 공백은 입력할 수 없습니다.", exception.getMessage());
 
         exception = assertThrows(IllegalArgumentException.class,
-                () -> new InputValidator().checkEmptyString(new String[]{"","lee","  ",""}));
+                () -> new InputValidator().checkEmptyString(new String[]{"","lee","  "," "}));
         assertEquals("자동차 이름에 공백은 입력할 수 없습니다.", exception.getMessage());
     }
 
