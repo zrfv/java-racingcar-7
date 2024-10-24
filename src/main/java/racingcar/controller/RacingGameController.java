@@ -18,7 +18,7 @@ public class RacingGameController {
     public void initGame() {
         for (String carNames : RacingCarName.get(inputView)) {
             RandomNumber randomNumber = new RandomNumber();
-            RacingCar racingCar = new RacingCar(carNames,RacingCarMove.move(randomNumber));
+            RacingCar racingCar = new RacingCar(carNames);
             racingCarList.add(racingCar);
         }
     }

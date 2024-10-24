@@ -4,9 +4,9 @@ public class RacingCar {
     private final String name;
     private int currentPosition;
 
-    public RacingCar(String name, int currentPosition) {
+    public RacingCar(String name) {
         this.name = name;
-        this.currentPosition = currentPosition;
+        this.currentPosition = 0;
     }
 
     public void move(RacingCarMove racingCarMove, RandomNumber randomNumber) {
@@ -23,9 +23,6 @@ public class RacingCar {
 
     private String convertIntToPosition() {
         String position= "";
-        if (getCurrentPosition() == 1) {
-            position ="-";
-        }
 
         for (int i = 0; i<getCurrentPosition();++i) {
             position = position.concat("-");
