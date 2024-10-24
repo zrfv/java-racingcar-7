@@ -4,12 +4,12 @@ public class RacingCar {
     private final String name;
     private int currentPosition;
 
-    public RacingCar(String name) {
+    public RacingCar(final String name) {
         this.name = name;
         this.currentPosition = 0;
     }
 
-    public RacingCar(final String name, int currentPosition) {
+    public RacingCar(final String name, final int currentPosition) {
         this.name = name;
         this.currentPosition = currentPosition;
     }
