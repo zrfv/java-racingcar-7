@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import racingcar.model.RacingCar;
+import racingcar.model.Winner;
 
 public class OutputView {
 
@@ -9,7 +10,11 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printRoundResult(RacingCar racingCar) {
-        System.out.println(racingCar.toString());
+    public static void printRoundResult(Object object) {
+        System.out.println(object.toString());
+    }
+
+    public static void printEndResult(String winners) {
+        System.out.println("최종 우승자 : " + winners);
     }
 }
