@@ -33,7 +33,13 @@ public class RacingGameController {
     private void duringGame(RacingCarMove racingCarMove, RandomNumber randomNumber) {
         for (RacingCar car : racingCarList) {
             car.move(racingCarMove, randomNumber);
+            System.out.println(car.toString());
         }
+    }
+
+    public void run() {
+        initGame();
+        startGame(5);
     }
 
     // currentPosition 에 move() 더하는 방식 - 이동했으면 +1 안했으면 +0

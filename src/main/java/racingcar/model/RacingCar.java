@@ -20,4 +20,21 @@ public class RacingCar {
     public int getCurrentPosition() {
         return currentPosition;
     }
+
+    private String convertIntToPosition() {
+        String position= "";
+        if (getCurrentPosition() == 1) {
+            position ="-";
+        }
+
+        for (int i = 0; i<getCurrentPosition();++i) {
+            position = position.concat("-");
+        }
+        return position;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " : " + convertIntToPosition();
+    }
 }
