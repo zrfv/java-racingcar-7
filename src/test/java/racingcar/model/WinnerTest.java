@@ -29,9 +29,8 @@ public class WinnerTest {
         racingCarList.add(new RacingCar("kane", 5));
 
         Winner winner = new Winner();
-        List<String> winnerList = winner.getList(racingCarList, 7);
-        List<String> winners = new ArrayList<>();
-        winners.add("son");
+        String winnerList = winner.getList(racingCarList, 7);
+        String winners = "son";
 
         assertEquals(winners, winnerList);
     }
@@ -45,10 +44,8 @@ public class WinnerTest {
         racingCarList.add(new RacingCar("kane", 7));
 
         Winner winner = new Winner();
-        List<String> winnerList = winner.getList(racingCarList, 7);
-        List<String> winners = new ArrayList<>();
-        winners.add("son");
-        winners.add("kane");
+        String winnerList = winner.getList(racingCarList, 7);
+        String winners = "son, kane";
 
         assertEquals(winners, winnerList);
     }
