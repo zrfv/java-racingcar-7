@@ -12,4 +12,14 @@ public class Winner {
         }
         return Collections.max(list);
     }
+
+    public List<String> getList(ArrayList<RacingCar> racingCarList, int maxPosition) {
+        List<String> winnerList = new ArrayList<>();
+        for (RacingCar car : racingCarList) {
+            if (car.getCurrentPosition() == maxPosition) {
+                winnerList.add(car.getName());
+            }
+        }
+        return winnerList;
+    }
 }
