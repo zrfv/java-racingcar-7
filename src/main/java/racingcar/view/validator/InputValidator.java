@@ -17,6 +17,9 @@ public class InputValidator {
         if (input == null || input.isBlank()) {
             throw new IllegalArgumentException(EMPTY_STRING);
         }
+        if (input.startsWith(",") || input.endsWith(",")) {
+            throw new IllegalArgumentException(EMPTY_STRING);
+        }
     }
 
     public void validatePositiveNumber(Integer input) {
