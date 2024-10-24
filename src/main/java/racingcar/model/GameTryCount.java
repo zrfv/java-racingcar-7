@@ -1,10 +1,14 @@
 package racingcar.model;
 
-import racingcar.view.InputView;
-
 public class GameTryCount {
 
-    public int get(final int tryCount) {
+    private int tryCount;
+
+    public void set(final int tryCount) {
+        this.tryCount = tryCount;
+    }
+
+    public int get() {
         return tryCount;
     }
 }

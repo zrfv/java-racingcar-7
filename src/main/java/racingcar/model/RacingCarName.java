@@ -5,6 +5,7 @@ import racingcar.view.InputView;
 
 public class RacingCarName {
 
+    // InputView 받지 않고 처리하도록 수정
     public static String[] getList(final InputView inputView) {
         String[] carNames = inputView.splitCarName(inputView.inputCarName());
         validateDuplicateNames(carNames);

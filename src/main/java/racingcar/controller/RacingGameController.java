@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import java.util.ArrayList;
+import racingcar.model.GameTryCount;
 import racingcar.model.RacingCar;
 import racingcar.model.RacingCarName;
 import racingcar.model.RacingCarMove;
@@ -12,11 +13,11 @@ import racingcar.view.OutputView;
 public class RacingGameController {
 
     final InputView inputView = new InputView();
+    final GameTryCount gameTryCount = new GameTryCount();
     final RandomNumber randomNumber = new RandomNumber();
     final Winner winner = new Winner();
 
     private ArrayList<RacingCar> racingCarList = new ArrayList<>();
-    private int tryCount;
 
     public void initCarName() {
         for (String carNames : RacingCarName.getList(inputView)) {
@@ -25,15 +26,14 @@ public class RacingGameController {
         }
     }
 
-    // 추후 수정
     public void initTryCount() {
         String inputTryCount = inputView.inputTryCount();
-        tryCount = inputView.convertStringToInt(inputTryCount);
+        gameTryCount.set(inputView.convertStringToInt(inputTryCount));
     }
 
     public void printRoundResult() {
         final RacingCarMove racingCarMove = new RacingCarMove();
-        for (int i = 0; i < tryCount; i++) {
+        for (int i = 0; i < gameTryCount.get(); i++) {
             printCarPosition(racingCarMove, randomNumber);
             System.out.println();
         }
